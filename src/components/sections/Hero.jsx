@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { Bio } from '../../data/constants';
 import Typewriter from "typewriter-effect";
-import HeroImg from '../../images/ww.jpg';
+import HeroImg from '../../images/ProfileImg.jpg';
 import HeroBgAnimation from '../../components/HeroBgAnimation';
 import {Tilt} from "react-tilt";
 import {motion} from "framer-motion";
@@ -241,7 +241,7 @@ const Hero = () => {
                         <motion.div {...headContentAnimation}>                      
                         <SubTitle>{Bio.description}</SubTitle>
                         </motion.div>
-                        <ResumeButton>Check Resume</ResumeButton>
+                        <ResumeButton href= "https://drive.google.com/file/d/1UUC7u7vgNOdOMmZHCNraWA9IvZOlKsoA/view?usp=drive_link" target="display">Check Resume</ResumeButton>
                     </HeroLeftContainer>
                     <HeroRightContainer>
                         <motion.div {...headContentAnimation}>

@@ -2,11 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { Bio } from "../../data/constants";
 import {
-  FacebookRounded,
   Instagram,
   LinkedIn,
-  Twitter,
 } from "@mui/icons-material";
+import { SiLeetcode } from "react-icons/si";
 
 const FooterContainer = styled.div`
   width: 100%;
@@ -93,12 +92,13 @@ const Footer = () => {
           <NavLink href="#Education">Education</NavLink>
         </Nav>
         <SocialMediaIcons>
-          <SocialMediaIcon href={Bio.facebook} target="display">
-            <FacebookRounded />
+          <SocialMediaIcon href={Bio.leetcode} target="display">
+            {/* <cibLeetcode/> */}
+            <SiLeetcode />
           </SocialMediaIcon>
-          <SocialMediaIcon href={Bio.twitter} target="display">
-            <Twitter />
-          </SocialMediaIcon>
+
+
+
           <SocialMediaIcon href={Bio.linkedin} target="display">
             <LinkedIn />
           </SocialMediaIcon>
@@ -106,7 +106,7 @@ const Footer = () => {
             <Instagram />
           </SocialMediaIcon>
         </SocialMediaIcons>
-        <Copyright>&copy; 2025 Rohit Chaudhary. All rights reserved.</Copyright>
+        <Copyright>&copy;2025 Rohit Chaudhary. All rights reserved.</Copyright>
       </FooterWrapper>
     </FooterContainer>
   );

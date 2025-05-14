@@ -2,19 +2,20 @@ export const Bio = {
   name: "Rohit Chaudhary",
   roles: [
     "Full Stack Developer",
-    "Android Developer",
-    "UI/UX Designer",
     "Programmer",
+    "Data Analyst"
   ],
   description:
-    "I am a motivated and versatile individual, always eager to take on new challenges. With a passion for learning I am dedicated to delivering high-quality results. With a positive attitude and a growth mindset, I am ready to make a meaningful contribution and achieve great things.",
+    "I am a result oriented and adaptable individual, constantly looking forward to embracing new challenges. Passionate about Learning, I am committed to produce high-quality results. With a growth mindset and a positive outlook, I seek to contribute meaningfully and accomplish great goals.",
   github: "https://github.com/rohit-2994",
   resume:
-    "https://drive.google.com/file/d/1txFKZD3LNIXMc329jD9c995AU8LItOXK/view?usp=drive_link",
-  linkedin: "https://www.linkedin.com/in/rishav-chanda-b89a791b3/",
-  twitter: "https://twitter.com/RishavChanda",
-  insta: "https://www.instagram.com/rishav_chanda/",
-  facebook: "https://www.facebook.com/rishav.chanda.165/",
+   "https://drive.google.com/file/d/1UUC7u7vgNOdOMmZHCNraWA9IvZOlKsoA/view?usp=drive_link",
+  linkedin: "https://www.linkedin.com/in/rc2994/",
+  twitter: "",
+  insta: "https://www.instagram.com/rohit_chaudhary2994/",
+  facebook: "",
+  leetcode: "https://leetcode.com/u/Rohit2994/",
+
 };
 
 export const skills = [

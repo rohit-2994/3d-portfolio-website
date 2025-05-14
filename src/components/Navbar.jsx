@@ -26,13 +26,29 @@ justify-content: space-between;
 font-size: 1rem; 
 
 `;
+// const NavLogo = styled(LinkR)`
+// width: 80%;
+// padding: 0 6px;
+// font-weight: 500;
+// font-size: 10px;
+// text-decoration: none;
+// color: inherit;
+// `;
+
 const NavLogo = styled(LinkR)`
-width: 80%;
-padding: 0 6px;
-font-weight: 500;
-font-size: 20px;
-text-decoration: none;
-color: inherit;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  padding: 0 6px;
+  font-weight: 500;
+  font-size: 24px;
+  text-decoration: none;
+  color: inherit;
+`;
+
+const ColorText = styled.div`
+  color: ${({ theme }) => theme.primary};
+  font-size: 32px;
 `;
 const NavItems = styled.ul`
 width: 100%; 
@@ -124,6 +140,9 @@ opacity: ${({ isOpen }) => (isOpen? "100%": "0")};
 z-index: ${({ isOpen }) => (isOpen? "1000" : "-1000")};
 `;
 
+const handleLogoClick = () => {
+    window.location.reload(); // This reloads the entire page
+  };
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false); 
@@ -131,11 +150,19 @@ const Navbar = () => {
     return(
         <Nav>
         <NavbarContainer>
-            <NavLogo to="/">Percy's Portfolio
-            {/* <a style={{
-                color: "white" ,
-            }}>GeeksForGeeks</a> */}
-            </NavLogo>
+            {/* <NavLogo to="/">Portfolio@RC */}
+            {/* <NavLogo onClick={handleLogoClick}>Portfolio@RC */}
+            {/* </NavLogo> */}
+
+            <NavLogo onClick={handleLogoClick}>
+          <ColorText>&lt;</ColorText>PortFolio
+          <div style={{ color: theme.primary }}>@</div>RC
+          <ColorText>&gt;</ColorText>
+        </NavLogo>
+
+
+
+
 
             <MobileIcon onClick={() => setIsOpen(!isOpen)}>
                 <MenuRounded style={{color: "inherit"}}/>
