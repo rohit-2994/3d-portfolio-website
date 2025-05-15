@@ -80,7 +80,7 @@ const EducationCard = ({ education }) => {
           height="100%"
           alt={education?.school}
           style={{ borderRadius: "50%", objectFit: "cover" }}
-          src={education?.img}
+          src={education?.img2}
         />
       }
       contentStyle={{

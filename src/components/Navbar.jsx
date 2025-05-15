@@ -150,10 +150,6 @@ const Navbar = () => {
     return(
         <Nav>
         <NavbarContainer>
-            {/* <NavLogo to="/">Portfolio@RC */}
-            {/* <NavLogo onClick={handleLogoClick}>Portfolio@RC */}
-            {/* </NavLogo> */}
-
             <NavLogo onClick={handleLogoClick}>
           <ColorText>&lt;</ColorText>PortFolio
           <div style={{ color: theme.primary }}>@</div>RC

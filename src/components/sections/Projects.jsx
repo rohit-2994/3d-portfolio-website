@@ -1,29 +1,20 @@
-import React,{ useState } from 'react' ;
+import React, { useState } from "react";
 import styled from "styled-components";
-import ProjectCard from '../cards/ProjectCard';
-import { projects } from '../../data/constants';
+import { projects } from "../../data/constants";
+import ProjectCard from "../cards/ProjectCard";
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-contnet: center;
-  margin-top: 50px;
-   padding: 0px 16px;
-  position: rlative;
-  z-index: 1;
-  align-items: center;
+margin-top: 100px;
+display: flex;
+flex-direction: column;
+justify-content-center;
+position: relative;
+z-index: 1;
+padding: 0 16px;
+align-items: center;
 `;
-
-const Desc = styled.div`
-  font-size: 18px;
-  text-align: center;
-  font-weight: 600;
-  color: ${({ theme }) => theme.text_secondary};
-  @media (max-width: 768px) {
-    font-size: 16px;
-  }`;
 const Wrapper = styled.div`
- position: relative;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -35,6 +26,7 @@ const Wrapper = styled.div`
     flex-direction: column;
   }
 `;
+
 const Title = styled.div`
   font-size: 52px;
   text-align: center;
@@ -47,12 +39,22 @@ const Title = styled.div`
   }
 `;
 
+const Desc = styled.div`
+  font-size: 18px;
+  text-align: center;
+  font-weight: 600;
+  color: ${({ theme }) => theme.text_secondary};
+  @media (max-width: 768px) {
+    font-size: 16px;
+  }
+`;
+
 const ToggleButtonGroup = styled.div`
-  display: flex;
-  border: 1.5px solid ${({ theme }) => theme.primary};
-  color: ${({ theme }) => theme.primary};
-  font-size: 16px;
-  border-radius: 12px;
+display: flex;
+border: 1.5px solid ${({ theme }) => theme.primary};
+color: ${({ theme }) => theme.primary};
+font-size: 16px;
+border-radius: 12px;
 font-weight 500;
 margin: 22px 0;
 @media (max-width: 768px){
@@ -78,6 +80,11 @@ const ToggleButton = styled.div`
   `}
 `;
 
+const Divider = styled.div`
+  width: 1.5px;
+  background: ${({ theme }) => theme.primary};
+`;
+
 const CardContainer = styled.div`
   display: flex;
   justify-content: center;
@@ -86,41 +93,39 @@ const CardContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-const Divider = styled.div`
-  width: 1.5px;
-  background: ${({ theme }) => theme.primary};
-`;
-
-const Projects = () => { 
-const [toggle, setToggle] = useState("all");
-return <Container id="Projects">
-    <Wrapper>
+const Projects = ({ openModal, setOpenModal }) => {
+  const [toggle, setToggle] = useState("all");
+  return (
+    <Container id="Projects">
+      <Wrapper>
         <Title>Projects</Title>
-         <Desc style={{marginBottom: "40px",}}>
-          I have worked on a wide range of projects. From web apps to android
-          apps. Here are some of my projects.
+        <Desc
+          style={{
+            marginBottom: "40px",
+          }}
+        >
+          I have worked on a diverse categories of projects. From web apps to dashboards. Here are some of my projects.
         </Desc>
-
         <ToggleButtonGroup>
-            <ToggleButton
+          <ToggleButton
             active={toggle === "all"}
             onClick={() => setToggle("all")}
           >
             ALL
           </ToggleButton>
-             <Divider />
+          <Divider />
           <ToggleButton
             active={toggle === "web app"}
             onClick={() => setToggle("web app")}
           >
-            WEB APP"S
+            WEB APP's
           </ToggleButton>
           <Divider />
           <ToggleButton
-            active={toggle === "android app"}
-            onClick={() => setToggle("android app")}
+            active={toggle === "data analysis"}
+            onClick={() => setToggle("data analysis")}
           >
-            ANDROID APP'S
+            DATA ANALYSIS
           </ToggleButton>
           <Divider />
           <ToggleButton
@@ -130,17 +135,28 @@ return <Container id="Projects">
             MACHINE LEARNING
           </ToggleButton>
         </ToggleButtonGroup>
-
         <CardContainer>
-            {toggle === "all" && projects.map((project) => <ProjectCard project={project} /> )}
-             {projects
+          {toggle === "all" &&
+            projects.map((project) => (
+              <ProjectCard
+                project={project}
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
+            ))}
+          {projects
             .filter((item) => item.category === toggle)
             .map((project) => (
-              <ProjectCard project={project} />
+              <ProjectCard
+                project={project}
+                openModal={openModal}
+                setOpenModal={setOpenModal}
+              />
             ))}
         </CardContainer>
-    </Wrapper>
-</Container> 
- 
+      </Wrapper>
+    </Container>
+  );
 };
-export default Projects
+
+export default Projects;

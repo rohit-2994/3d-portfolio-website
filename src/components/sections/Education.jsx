@@ -7,6 +7,7 @@ import EducationCard from "../cards/EducationCard";
 import EarthCanvas from "../canvas/Earth";
 
 const Container = styled.div`
+  margin-top: 100px;
   display: flex;
   flex-direction: column;
   justify-contnet: center;
